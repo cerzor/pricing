@@ -2,21 +2,14 @@ import csv
 import urllib
 import datetime
 
+def pullCsv(symbol):
+    dateStamp = datetime.date.today()
+    #fileName = symbol + dateStamp.year + dateStamp.month + dateStamp.year
 
 
+    uri = 'http://financials.morningstar.com/ajax/exportKR2CSV.html?t=' + symbol
+    #response = urllib.urlretrieve(uri)
 
-dateStamp = datetime.date.today()
-#fileName = 'FB' + dateStamp.year + dateStamp.month + dateStamp.year
+    urllib.urlretrieve(uri, 'ratios/'+symbol+'.CSV')
 
-
-uri = 'http://financials.morningstar.com/ajax/exportKR2CSV.html?t=FB'
-#response = urllib.urlretrieve(uri)
-
-urllib.urlretrieve(uri, 'FB.CSV')
-
-
-
-
-
-
-
+#pullCsv("MRO")
