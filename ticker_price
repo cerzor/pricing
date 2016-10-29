@@ -1,0 +1,7 @@
+CREATE TABLE `TICKER_PRICE` (
+  `SYMBOL` varchar(15) DEFAULT NULL,
+    `PRICE` double unsigned DEFAULT NULL,
+      `DATE` varchar(20) DEFAULT NULL
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+

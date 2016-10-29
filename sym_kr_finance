@@ -1,0 +1,21 @@
+CREATE TABLE `SYM_KR_FINANCE` (
+  `SYMBOL` varchar(20) DEFAULT NULL,
+    `YEAR` varchar(20) DEFAULT NULL,
+      `REVENUE` varchar(15) DEFAULT NULL,
+        `GROSS_MARGIN` double DEFAULT NULL,
+          `OPERATE_INCOM` double DEFAULT NULL,
+            `OPERATING_MARGIN` double DEFAULT NULL,
+              `NET_INCOME` double DEFAULT NULL,
+                `EPS` double DEFAULT NULL,
+                  `DIVIDENDS` double DEFAULT NULL,
+                    `PAYOUT_RATIO` double DEFAULT NULL,
+                      `SHARES` double DEFAULT NULL,
+                        `BOOK_VALUE_PS` double DEFAULT NULL,
+                          `OPERATING_CF` double DEFAULT NULL,
+                            `CAP_SPENDING` double DEFAULT NULL,
+                              `FCF` double DEFAULT NULL,
+                                `FCF_PS` double DEFAULT NULL,
+                                  `WORKING_CAPITAL` double DEFAULT NULL
+                                  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+

@@ -1,0 +1,18 @@
+import csv
+import datetime
+
+def readWritePrice(symbol):
+     dateStamp = datetime.date.today()
+    file = open('quotes/' + tickerSymbol + '_' + dateStamp + '.CSV')
+    csv_f = csv.reader(file, skipinitialspace=True)
+
+    infoList = []
+    for row in csv_f:
+    	    if row and csv_f.line_num > 2:
+                   infoList.append(row)
+            elif not row:
+	        	break
+    file.close()
+
+
+writeSql("")
