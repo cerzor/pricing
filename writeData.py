@@ -1,8 +1,8 @@
 import MySQLdb
-def writeData(statements):
+def writeData(statements, pw):
     db = MySQLdb.connect(host="localhost",  
                          user="price",         
-                         passwd="testApp123",
+                         passwd=pw,
                          db="PRICINGAPP")    
 
 

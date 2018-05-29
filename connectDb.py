@@ -1,6 +1,6 @@
 import MySQLdb
-def pullSymbols():
-    db = MySQLdb.connect(host="localhost",  user="price",passwd="testApp123", db="PRICINGAPP")
+def pullSymbols(pw):
+    db = MySQLdb.connect(host="localhost",  user="price",passwd=pw, db="PRICINGAPP")
 
 
     cur = db.cursor()
