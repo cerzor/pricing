@@ -14,7 +14,8 @@ def writeData(statements, pw):
             cur.execute("commit")
     except:
         print "Unexpected error at WRITING DATA"
-        raise
+        print "statement"
+        return "FAIL"
 
 
 #    results = []

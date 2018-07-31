@@ -14,43 +14,46 @@ def writeSql(tickerSymbol):
 
 
     loadQuery = []
-    for column in infoList[0]:
-        if (column != "TTM" and column != ""): 
+    if(infoList[0] is None):
+        return 'FAIL'
+    else:
+        for column in infoList[0]:
+            if (column != "TTM" and column != ""): 
     #        print column
-            loadQuery.append("""insert into SYM_KR_FINANCE ( 
-            SYMBOL
-            ,`YEAR`
-            ,REVENUE
-            ,GROSS_MARGIN
-            ,OPERATE_INCOM
-            ,OPERATING_MARGIN
-            ,NET_INCOME
-            ,EPS
-            ,DIVIDENDS
-            ,PAYOUT_RATIO
-            ,SHARES
-            ,BOOK_VALUE_PS
-            ,OPERATING_CF
-            ,CAP_SPENDING
-            ,FCF
-            ,FCF_PS
-            ,WORKING_CAPITAL
-            ) VALUES ('""" + tickerSymbol +"','" + column + "','")
+                loadQuery.append("""insert into SYM_KR_FINANCE ( 
+                SYMBOL
+                ,`YEAR`
+                ,REVENUE
+                ,GROSS_MARGIN
+                ,OPERATE_INCOM
+                ,OPERATING_MARGIN
+                ,NET_INCOME
+                ,EPS
+                ,DIVIDENDS
+                ,PAYOUT_RATIO
+                ,SHARES
+                ,BOOK_VALUE_PS
+                ,OPERATING_CF
+                ,CAP_SPENDING
+                ,FCF
+                ,FCF_PS
+                ,WORKING_CAPITAL
+                ) VALUES ('""" + tickerSymbol +"','" + column + "','")
 
-    loopIndex = 1
-    while loopIndex < 16:
-        for index, rev in enumerate(infoList[loopIndex]):
+        loopIndex = 1
+        while loopIndex < 16:
+            for index, rev in enumerate(infoList[loopIndex]):
              ## print str(rev) + " " + str(index)
-            if(index !=  0  and index < 11):
+                if(index !=  0  and index < 11):
                # print rev
-                curIndex = index - 1
-                if(loopIndex != 15):
-                    loadQuery[curIndex] = loadQuery[curIndex] + rev +"','"
-                else:
-                    loadQuery[curIndex] = loadQuery[curIndex] + rev +"')"
-        loopIndex += 1
+                    curIndex = index - 1
+                    if(loopIndex != 15):
+                        loadQuery[curIndex] = loadQuery[curIndex] + rev +"','"
+                    else:
+                        loadQuery[curIndex] = loadQuery[curIndex] + rev +"')"
+            loopIndex += 1
 
     #for item in loadQuery:    
     #     print item
-    return loadQuery
+        return loadQuery
 #writeSql("","")
